@@ -1,0 +1,7 @@
+# Ignore following
+**/.*
+**/target
+**/bin
+**/classes
+**/.settings
+
