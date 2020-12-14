@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<!--
+		<Console name="Console">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		-->		
+		<RollingFile name="applicationAppender" fileName="exam-log-generator.log" filePattern="exam-log-generator-%i.log">		
+			<PatternLayout>
+				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+			</PatternLayout>
+			
+			<Policies>
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<logger name="edu.wilp.bits.bds" level="trace" additivity="false">
+			<appender-ref ref="applicationAppender" level="trace" />
+		</logger>
+
+	</Loggers>
+</Configuration>
